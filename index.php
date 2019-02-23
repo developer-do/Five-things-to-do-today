@@ -2,6 +2,7 @@
 <?= $hTag ?>
 <div class="wrapCenter">
   <p>To Do List에 온걸 환영합니다!</p>
+  <?php if(isset($_SESSION['userName'])) { ?>
   <form action="" method="POST">
     <div>
       <input type="text" name="importantToDo" placeholder="중요한 할 일이라면 여기다가 작성해주세요.">
@@ -13,6 +14,9 @@
       <input type="submit" value="할 일 추가하기">
     </div>
   </form>
+  <?php } else { ?>
+    <p>로그인 후 해당 서비스 이용이 가능 합니다!</p>
+  <?php } ?>
   <div>
     <p><?= $loginTag ?></p>
     <p><?= $joinTag ?></p>

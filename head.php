@@ -11,13 +11,20 @@
 </head>
 <body>
   <div class="wrap">
-  <?php 
+  <?php
     $hTag = "";
     if(_INDEX_) {
       $hTag = "<h1>To Do List!</h1>";
+    }
+
+    session_start(); 
+
+    $loginTag = "<a href='".ROOT_CHECK."/logout.php'>로그아웃</a>";
+    $joinTag  = "";
+    $infoTag  = "<a href='{$content}/info.php'>이용방법안내</a>";
+    if(!isset($_SESSION['userName'])) {
       $loginTag = "<a href='{$content}/login.php'>로그인</a>";
       $joinTag = "<a href='{$content}/join.php'>회원가입</a>";
-      $infoTag = "<a href='{$content}/info.php'>이용방법안내</a>";
     }
   ?>
   

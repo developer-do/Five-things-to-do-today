@@ -81,7 +81,7 @@
     }
   }
   
-  function checkIDFunc() {
+  let checkIDFunc = function() {
     if (userIDRex.test(userID.value)) {
       $.ajax({
         url  : '../../check/memberIdExist.php',
