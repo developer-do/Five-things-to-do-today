@@ -1,6 +1,5 @@
-<?php include_once('common.php'); ?>
 <?php include_once('head.php'); ?>
-
+<?= $hTag ?>
 <div class="wrapCenter">
   <p>To Do List에 온걸 환영합니다!</p>
   <form action="" method="POST">
@@ -15,9 +14,9 @@
     </div>
   </form>
   <div>
-    <p><a href="<?=$content ?>/login.php">로그인하기</a></p>
-    <p><a href="<?=$content ?>/join.php">회원가입하기</a></p>
-    <p><a href="<?=$content ?>/info.php">이용방법</a></p>
+    <p><?= $loginTag ?></p>
+    <p><?= $joinTag ?></p>
+    <p><?= $infoTag ?></p>
   </div>
 </div>
 
