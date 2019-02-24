@@ -1,23 +1,21 @@
 <?php include_once('head.php'); ?>
-<?= $hTag ?>
+
 <div class="wrapCenter">
-  <p>To Do List에 온걸 환영합니다!</p>
+  <h1 class="headerTags"><?= $hTag ?></h1>
+  <p class="headerTags"><?= $welcome ?></p>
   <?php if(isset($_SESSION['userName'])) { ?>
-  <form action="" method="POST">
-    <div>
-      <input type="text" name="importantToDo" placeholder="중요한 할 일이라면 여기다가 작성해주세요.">
-    </div>
-    <div>
-      <input type="text" name="todayToDo" placeholder="오늘 해야 될 일이라면 여기다가 작성해주세요.">
-    </div>
-    <div>
-      <input type="submit" value="할 일 추가하기">
+  <form action="/check/todoAdd.php" method="POST" id="todayForm">
+    <div class="formInWrap">
+      <div class="todoBox">
+        <input type="text" name="todayToDo" id="todayToDo">
+      </div>
+      <input type="submit" value="할 일 추가하기" id="todaySubmit" disabled>
     </div>
   </form>
   <?php } else { ?>
-    <p>로그인 후 해당 서비스 이용이 가능 합니다!</p>
+    <p class="loginPlease">로그인 후 해당 서비스 이용이 가능 합니다!</p>
   <?php } ?>
-  <div>
+  <div class="memberWrap">
     <p><?= $loginTag ?></p>
     <p><?= $joinTag ?></p>
     <p><?= $infoTag ?></p>

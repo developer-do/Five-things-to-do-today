@@ -11,3 +11,5 @@ a:hover { text-decoration: none; }
 button { outline: none; }
 
 table { border-collapse: collapse; border-spacing: 0; }
+
+.wrap { width: 1200px; margin: 0 auto; }

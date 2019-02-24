@@ -1,0 +1,15 @@
+@mixin clearfix {
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayBlock {
+  display: block;
+}

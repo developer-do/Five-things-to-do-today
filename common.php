@@ -1,4 +1,5 @@
 <?php
+  session_start();
   /* URL check 하기
    * $str  =>   url체크 할 문자열
    */

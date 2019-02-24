@@ -7,24 +7,33 @@
   <title>To Do List!!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <?php
+    if(_INDEX_) {
+      echo '<link rel="stylesheet" href="/css/index.css">';
+    }
+  ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
+  <div id="bgcImg"></div>
   <div class="wrap">
   <?php
     $hTag = "";
     if(_INDEX_) {
-      $hTag = "<h1>To Do List!</h1>";
+      $hTag = "To Do List!";
     }
 
-    session_start(); 
-
-    $loginTag = "<a href='".ROOT_CHECK."/logout.php'>로그아웃</a>";
-    $joinTag  = "";
+    $loginTag = "<a href='{$content}/login.php'>로그인</a>";
+    $joinTag  = "<a href='{$content}/join.php'>회원가입</a>";
+    $welcome  = "To Do List에 온걸 환영합니다!";
     $infoTag  = "<a href='{$content}/info.php'>이용방법안내</a>";
-    if(!isset($_SESSION['userName'])) {
-      $loginTag = "<a href='{$content}/login.php'>로그인</a>";
-      $joinTag = "<a href='{$content}/join.php'>회원가입</a>";
+
+    
+    if(isset($_SESSION['userName'])) {
+      $loginTag = "<button class='logout'>로그아웃</button>";
+      $joinTag  = "<a href='{$content}/mylist.php'>나의 리스트</a>";
+      $welcome  = $_SESSION['userName']."님! To Do List에 온걸 환영합니다!";
     }
   ?>
-  

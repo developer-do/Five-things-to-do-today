@@ -1,0 +1,15 @@
+.displayNone { display: none; }
+
+.displayBlock { display: block; }
+
+.wrap { width: 100%; }
+
+#bgcImg { background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url("../images/"); width: 100%; height: 100vh; position: absolute; z-index: -2; }
+#bgcImg:after { content: ""; display: block; width: 100%; height: 100%; position: absolute; z-index: -1; background-color: rgba(50, 50, 50, 0.5); }
+
+.wrapCenter { position: relative; width: 100%; height: 100vh; }
+.wrapCenter .headerTags, .wrapCenter .loginPlease { text-align: center; }
+.wrapCenter form { width: 400px; padding: 20px; margin: 0 auto; }
+.wrapCenter form > * { text-align: center; }
+.wrapCenter .memberWrap { margin: 0 auto; width: 600px; }
+.wrapCenter .memberWrap p { text-align: center; }
