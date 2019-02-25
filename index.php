@@ -9,7 +9,7 @@
       <div class="todoBox">
         <input type="text" name="todayToDo" id="todayToDo">
       </div>
-      <input type="submit" value="할 일 추가하기" id="todaySubmit" disabled>
+      <input type="submit" value="할 일 추가하기" id="todaySubmit">
     </div>
   </form>
   <?php } else { ?>

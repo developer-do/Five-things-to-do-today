@@ -28,12 +28,13 @@
     $loginTag = "<a href='{$content}/login.php'>로그인</a>";
     $joinTag  = "<a href='{$content}/join.php'>회원가입</a>";
     $welcome  = "To Do List에 온걸 환영합니다!";
-    $infoTag  = "<a href='{$content}/info.php'>이용방법안내</a>";
+    $infoTag  = "";
 
     
     if(isset($_SESSION['userName'])) {
       $loginTag = "<button class='logout'>로그아웃</button>";
       $joinTag  = "<a href='{$content}/mylist.php'>나의 리스트</a>";
+      $infoTag  = "<a href='{$content}/myinfo.php'>나의정보</a>";
       $welcome  = $_SESSION['userName']."님! To Do List에 온걸 환영합니다!";
     }
   ?>

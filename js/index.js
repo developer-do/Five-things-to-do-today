@@ -1,6 +1,6 @@
 // 로그아웃
 let logoutUrl = function () {
-  location.href = '/check/logout.php';
+  location.href = 'check/logout.php';
 };
 
 let logoutFunc = function () {
@@ -12,17 +12,27 @@ logoutFunc();
 // 할일 값 체크
 let tInput = function () {
   let todayToDo = document.querySelector('#todayToDo');
-  let todaySubmit = document.querySelector('#todaySubmit');
+  return todayToDo.value;
+}
 
-  todayToDo.addEventListener('change', function () {
-    if (!todayToDo.value) {
-      todaySubmit.setAttribute('disabled', 'disabled');
+let checktodoInput = function () {
+  let todaySubmit = document.querySelector('#todaySubmit');
+  
+  todaySubmit.addEventListener('click', function (e) {
+    if (!tInput()) {
+      let todayToDo = document.querySelector('#todayToDo');
+      alert('할 일을 적어주세요!');
+      todayToDo.focus();
+      e.preventDefault();  
     } else {
-      todaySubmit.removeAttribute('disabled');
+      let conf = confirm('추가 할 일이 ' + tInput() + '이 맞으십니까?');
+      if (!conf) {
+        e.preventDefault();
+      }
     }
   });
 }
-tInput();
+checktodoInput();
 
 // 백그라운드 넣기
 let bgcFunc = function () {

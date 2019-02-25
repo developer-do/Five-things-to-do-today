@@ -1,10 +1,11 @@
 <?php
   session_start();
+  header('Content-Type: text/html; charset=UTF-8');
   /* URL check 하기
    * $str  =>   url체크 할 문자열
    */
   function indexChk($str) {
-    $uri = $_SERVER['REQUEST_URI'];
+    $uri = $_SERVER['SCRIPT_NAME'];
     preg_match('/'.$str.'/', $uri, $match);
     if(count($match) === 0) {
       return false;
