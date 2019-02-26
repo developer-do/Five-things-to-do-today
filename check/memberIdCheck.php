@@ -30,6 +30,7 @@
     echo '저장하는 과정에서 오류가 났습니다. 관리자에게 문의해 주세요.';
     error_log(mysqli_error($conn));
   } else {
+    include_once('/mail/mail.php');
     header('Location: /index.php');
   }
 ?>

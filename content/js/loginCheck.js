@@ -17,7 +17,7 @@ let loginChk = function () {
         ajaxPassword  : userPassword.value
       },
       success: function (data) {
-        if (data) {
+        if (data === 'success') {
           alert("로그인 되셨습니다.");
           location.href = '/index.php';
         } else {

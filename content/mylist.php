@@ -22,4 +22,3 @@ include_once('_footer.php');
 ?>
 
 <script src="./js/myList.js"></script>
-

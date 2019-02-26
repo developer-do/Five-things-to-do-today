@@ -1,7 +1,7 @@
 let userBirthDay      = document.querySelector('#userBirthDay');
 let userEmail         = document.querySelector('#userEmail');
 let userPassword      = document.querySelector('#userPassword');
-let userPasswordChk   = document.querySelector('#userPasswordCHk');
+let userPasswordChk   = document.querySelector('#userPasswordChk');
 let userName          = document.querySelector('#userName');
 let submitBtn         = document.querySelector('#submitBtn');
 
@@ -32,7 +32,7 @@ let valueChk = function (e) {
     return false;
   }
 
-  if ( userPassword.value != "" && !userPasswordChk.value != "" ) {
+  if ( userPassword.value != "" && userPasswordChk.value != "" ) {
     if (!userPasswordRex.test(userPassword.value)) {
       alert("비밀번호 형식이 잘못되었습니다.");
       userPassword.focus();
@@ -66,7 +66,7 @@ let userPwdChk = function () {
   return prom;
 }
 
-let ajaxPwdChk = function () {
+let ajaxPwdChk = function (e) {
   $.ajax({
     url: '../../check/myInfoChange.php',
     type: 'POST',

@@ -18,5 +18,8 @@
 
   if($row && password_verify($password, $row['userPassword'])) {
     echo "success";
+  } else {
+    echo "false";
+    session_destroy();
   }
 ?>

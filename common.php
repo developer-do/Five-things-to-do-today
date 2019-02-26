@@ -47,4 +47,23 @@
       break;
     }
   }
+
+
+  // Random String $length = 문자열 길이
+  function randomTxt($length) {
+    $randomText = "0123456789!@#$%^&*_+qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+    $randomLen = strlen($randomText);
+    $randomString = '!1';
+    for($i = 0; $i < 13; $i++){
+      $randomString .= $randomText[rand(0, $randomLen - 1)];
+    }
+    return $randomString;
+  }
+
+  function mailSend($text, $email) {
+    $to = "{$email}";
+    $subject = "To Do List에서 변경된 비밀번호를 보내드렸습니다.";
+    $message = "변경된 비밀번호는 \n". $text." 입니다. \n 로그인 하신 후에 내정보 변경에서 비밀번호 변경을 해주시기 바랍니다.";
+    mail($to, $subject, $message);
+  }
 ?>
