@@ -3,7 +3,7 @@
 <?php
   $hTag = "";
   if(_INDEX_) {
-    $hTag = "To Do List!";
+    $hTag = "<h1 class='headerTags notUserName'>To Do List!</h1>";
   }
 
   $loginTag = "<a href='{$content}/login.php'>로그인</a>";
@@ -13,6 +13,7 @@
   $pwdWhat  = "<a href='{$content}/pwdWhat.php'>비밀번호 찾기</a>";
 
   if(isset($_SESSION['userName'])) {
+    $hTag = "<h1 class='headerTags'>To Do List!</h1>";
     $loginTag = "<button class='logout'>로그아웃</button>";
     $joinTag  = "<a href='{$content}/mylist.php'>나의 리스트</a>";
     $infoTag  = "<a href='{$content}/myinfo.php'>나의정보</a>";
@@ -25,7 +26,7 @@
 
 <div class="wrapCenter">
   <div>
-    <h1 class="headerTags"><?= $hTag ?></h1>
+    <?= $hTag ?>
     <p class="headerTags"><?= $welcome ?></p>
     <?php if(isset($_SESSION['userName'])) { ?>
     <form action="/check/todoAdd.php" method="POST" id="todayForm">
@@ -37,7 +38,7 @@
       </div>
     </form>
     <?php } else { ?>
-      <p class="loginPlease">로그인 후 해당 서비스 이용이 가능 합니다!</p>
+      <p class="loginPlease notlogin">로그인 후 해당 서비스 이용이 가능 합니다!</p>
     <?php } ?>
     <div class="memberWrap">
       <p><?= $loginTag ?></p>
