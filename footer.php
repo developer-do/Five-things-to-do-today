@@ -4,6 +4,7 @@ if(_INDEX_ && isset($_SESSION['userName'])) {
 }
 if(_INDEX_) {
   echo '<script src="/js/common.js"></script>';
+  echo '<script src="/js/weather.js"></script>';
 }
 ?>
 
